@@ -1,0 +1,7 @@
+.border {
+    width: 100px;
+    height: 3px;
+    background-color: #ff9f4a;
+    margin: 8px auto;
+    border-radius: 10px;
+}

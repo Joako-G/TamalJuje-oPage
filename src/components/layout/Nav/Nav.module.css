@@ -1,0 +1,40 @@
+@import '../../../index.css';
+
+.navBar {
+    background-color: var(--bg-nav);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px #ea8000;
+    min-height: var(--nav-height);
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.navBar .items {
+    width: 60px;
+    height: 60px;
+}
+
+.navBar svg {
+    width: 25px;
+    height: 25px;
+}
+
+.iconOutline svg {
+    fill: white;
+    stroke: white !important;
+}
+
+.navBar a {
+    color: white;
+}
+
+.navLinkActive {
+    width: 60px;
+    height: 60px;
+    background-color: var(--bg-btn);
+    border-radius: 55%;
+}

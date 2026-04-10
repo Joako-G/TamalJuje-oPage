@@ -1,0 +1,25 @@
+@import '../../../index.css';
+
+.wpIcon {
+    position: fixed;
+    bottom: 105px;
+    right: 0;
+    z-index: 1000;
+    height: 60px;
+    width: var(--wp-height);
+
+    background-color: #25d366;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 5px 5px 100px rgb(64, 156, 76, 0.8);
+}
+
+.wpIcon:hover {
+    transform: scale(1.1);
+}

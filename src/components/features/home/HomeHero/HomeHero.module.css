@@ -1,0 +1,9 @@
+.containerBg {
+    background: var(--bg-hd-home);
+    height: 250px;
+}
+
+.btnOrder {
+    background-color: var(--bg-btn);
+    color: var(--text-secondary);
+}

@@ -1,0 +1,35 @@
+:root {
+  --bg-primary: #0e0e0e;
+  --bg-btn: #fe921a;
+  --bg-card: #1a1a1a;
+  --bg-step: #2f251d;
+  --bg-simbol: #ea8000;
+  --bg-attention: #ea8000;
+  --bg-nav: rgba(0, 0, 0, 0.4);
+  --text-primary: white;
+  --text-secondary: black;
+  --text-special: #fd8b00;
+  --bg-svg: #31271f;
+  /* --color-svg: #fd8b00; */
+  --color-svg: #ea7f00;
+  --text-btn: black;
+  --text-p: grey;
+  --bg-card-order: linear-gradient(156deg, rgba(254, 195, 69, 1) 0%, rgba(253, 140, 6, 1) 70%);
+  --bg-card-home: #fd8b00;
+  --bg-hd-home: linear-gradient(to bottom, rgba(69, 232, 254, .5) 20%, rgba(253, 245, 6, 0.2) 100%);
+  /* --bg-hd-home: linear-gradient(to bottom, rgba(69, 232, 254, .3) 20%, rgba(253, 245, 6, .3) 100%, ); */
+  --text-card: #8f8c8c;
+  --nav-height: 70px;
+  --wp-height: 60px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}

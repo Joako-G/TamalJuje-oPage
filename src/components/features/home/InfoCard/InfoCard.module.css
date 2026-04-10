@@ -1,0 +1,9 @@
+.card {
+    background-color: var(--bg-card);
+    height: 300px;
+}
+
+.border {
+    background: rgba(139, 139, 139, 0.2);
+    height: 1px;
+}

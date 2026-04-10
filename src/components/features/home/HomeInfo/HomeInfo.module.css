@@ -1,0 +1,36 @@
+@import '../../../../index.css';
+
+.card {
+    background-color: var(--bg-card);
+    height: 300px;
+}
+
+.card svg {
+    background-color: var(--bg-svg);
+    height: 60px;
+    width: 60px;
+}
+
+.card a {
+    color: var(--text-special);
+}
+
+.cardDelivery {
+    background-color: var(--bg-card-home);
+    color: black;
+}
+
+.cardDelivery svg {
+    background-color: var(--color-svg);
+    padding: .5rem;
+    border-radius: 50%;
+}
+
+.border {
+    background: rgba(139, 139, 139, 0.2);
+    height: 1px;
+}
+
+.btnOrderNow {
+    color: yellow;
+}

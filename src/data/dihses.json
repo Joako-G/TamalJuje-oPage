@@ -1,0 +1,74 @@
+{
+    "dishes": [
+        {
+            "id": 1,
+            "name": "Tamales",
+            "price": 2000,
+            "image": "tamales.jpeg",
+            "description": "Hechos con maíz molido y rellenos de carne bien sazonada, con un leve toque de ají que les da ese sabor único. Suaves, calientes y perfectos para disfrutar en cualquier momento"
+        },
+        {
+            "id": 2,
+            "name": "Empanadas",
+            "price": 10000,
+            "image": "empanada.jpg",
+            "description": "Masa dorada y crocante, rellena con carne jugosa y bien condimentada. Un clásico irresistible, perfecto para cualquier momento"
+        },
+        {
+            "id": 3,
+            "name": "Ñoquis",
+            "price": 8000,
+            "image": "ñoquis.jpg",
+            "description": "Suaves y livianos, acompañados con salsa casera. Un plato clásico que nunca falla."
+        },
+        {
+            "id": 4,
+            "name": "Picante de Pollo",
+            "price": 8000,
+            "image": "pPollo.jpeg",
+            "description": "Pollo tierno en una salsa casera llena de sabor, bien condimentada y preparada al estilo tradicional. Un plato abundante y reconfortante."
+        },
+        {
+            "id": 5,
+            "name": "Picante de Lengua",
+            "price": 8000,
+            "image": "pLengua.jpg",
+            "description": "Lengua cocida a la perfección, acompañada de una salsa sabrosa y bien casera que resalta todo su sabor. Ideal para quienes buscan algo distinto."
+        },
+        {
+            "id": 6,
+            "name": "Pollo al horno",
+            "price": 8000,
+            "image": "polloHorno.jpeg",
+            "description": "Pollo dorado, jugoso por dentro y bien sazonado. Cocinado lentamente para lograr el mejor sabor."
+        },
+        {
+            "id": 7,
+            "name": "Chancho al Horno",
+            "price": 8000,
+            "image": "chancho.jpeg",
+            "description": "Carne tierna por dentro y crocante por fuera, con ese sabor casero que lo hace irresistible."
+        },
+        {
+            "id": 8,
+            "name": "Carne al Horno",
+            "price": 9000,
+            "image": "",
+            "description": "Corte tierno y jugoso, cocinado al horno con condimentos que realzan su sabor natural."
+        },
+        {
+            "id": 9,
+            "name": "Napolitana de Carne",
+            "price": 9000,
+            "image": "napo.jpg",
+            "description": "Milanesa de carne bien dorada, con salsa, jamón y queso derretido. Sabrosa, abundante y perfecta para disfrutar con papas fritas y arroz."
+        },
+        {
+            "id": 10,
+            "name": "Matambre a la Piiza",
+            "price": 10000,
+            "image": "matambre.jpeg",
+            "description": "Matambre jugoso con salsa y queso derretido al estilo pizza. Abundante, sabroso y acompañado de papas fritas y arroz."
+        }
+    ]
+}
