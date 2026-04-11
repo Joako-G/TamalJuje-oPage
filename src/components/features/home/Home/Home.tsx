@@ -6,10 +6,9 @@ export function Home() {
     return (
         <div>
             <HomeHero />
-            <main className='container-fluid d-flex flex-column w-100 justify-content-center align-items-center'>
-                <HomeInfo />
-                <HomeCTA />
-            </main>
+            <HomeInfo />
+
+            <HomeCTA />
         </div>
     )
 }

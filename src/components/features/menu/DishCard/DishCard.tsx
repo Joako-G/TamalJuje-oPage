@@ -7,9 +7,10 @@ interface DishCardProps {
 
 export function DishCard({ dish }: DishCardProps) {
     const { name, price, image, description } = dish
+    const dishImageSrc = image ? `/images/${image}` : '/images/logo.jpeg'
     return (
         <div className={`card d-flex flex-column gap-1 ${styles.dish}`}>
-            <img className="w-100" src={`/images/${image}`} alt="" />
+            <img className={`w-100 ${styles.image}`} src={dishImageSrc} alt={name} loading='lazy' />
             <div className="card-body p-4">
                 <div className="d-flex justify-content-between align-items-center m-auto">
                     <h1 className="card-title text-white fw-bold fs-3 m-0"> {name} </h1>

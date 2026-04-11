@@ -1,9 +1,53 @@
 .containerBg {
     background: var(--bg-hd-home);
-    height: 250px;
+    height: 100%;
 }
 
 .btnOrder {
     background-color: var(--bg-btn);
     color: var(--text-secondary);
+}
+
+.btnOrder svg {
+    height: 30px;
+    width: 30px;
+    stroke: black;
+}
+
+.btnOrder:hover {
+    background-color: var(--bg-btn) !important;
+    border: none;
+}
+
+.btnOrder:active {
+    transform: scale(0.95);
+}
+
+.btnMenu {
+    background-color: var(--bg-card);
+}
+
+.btnMenu:hover {
+    background-color: var(--bg-card) !important;
+    border: none;
+}
+
+.btnMenu:active {
+    transform: scale(0.95);
+}
+
+@media(min-width: 768px) {
+    .btnOrder svg {
+        height: 35px;
+        width: 35px;
+        stroke: black;
+    }
+}
+
+@media(min-width: 1024px) {
+    .btnOrder svg {
+        height: 35px;
+        width: 35px;
+        stroke: black;
+    }
 }

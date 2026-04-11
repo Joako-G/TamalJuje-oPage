@@ -2,7 +2,7 @@
 
 .card {
     background-color: var(--bg-card);
-    height: 300px;
+    /* height: 300px; */
 }
 
 .card svg {
@@ -27,7 +27,7 @@
 }
 
 .border {
-    background: rgba(139, 139, 139, 0.2);
+    background: rgba(83, 83, 83, 0.61);
     height: 1px;
 }
 

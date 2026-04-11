@@ -3,9 +3,10 @@
     border-radius: 20px;
 }
 
-.dish img {
+.image {
     border-radius: 15px 15px 0 0;
-    border-top: 50%;
+    height: 220px;
+    object-fit: cover;
 }
 
 .text {
