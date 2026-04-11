@@ -4,7 +4,7 @@ import styles from './HomeCTA.module.css'
 export function HomeCTA() {
     return (
         <section className='container pt-5'>
-            <div className='row row-cols-1 row-cols-md-2 px-md-5 align-items-center'>
+            <div className='row row-cols-1 row-cols-md-2 align-items-center'>
 
                 <div className={`col-10 col-lg-7 m-auto position-relative card border-0 rounded-5 ${styles.cardSpecial}`}>
                     <div className={`card-img-overlay d-flex flex-column align-items-center justify-content-center text-center bg-dark bg-opacity-50 ${styles.cardBody}`}>
@@ -32,15 +32,3 @@ export function HomeCTA() {
         </section>
     )
 }
-
-/*
-En la imagen de tamal
-<h2 className="display-4 fw-bold mb-3">El sabor de Jujuy, listo para llevar</h2>
-<Link to='/menu' className='btn btn-warning btn-lg rounded-pill px-5 fw-bold fs-4 shadow'> VER MENÚ COMPLETO </Link>
-
-  Cada tamal se prepara a mano diariamente con ingredientes locales frescos.
-                        Creemos en lo casero, sin procesos industriales. Reserva tus tamales a travez
-                        de WhatsApp  Tu pedido se reserva y te 
-                        espera en el local para que lo disfrutes al instante. Reserva el tuyo antes de que se acaben
-  
- */

@@ -5,7 +5,7 @@ import styles from './HomeInfo.module.css'
 
 export function HomeInfo() {
     return (
-        <div className="container w-md-100 my-5 px-5">
+        <div className="container w-md-100 my-5 px-5 px-md-0">
             <div className="row row-cols-1 row-cols-md-3 g-5">
 
                 <div className={`col`}>
