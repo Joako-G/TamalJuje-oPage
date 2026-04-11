@@ -8,7 +8,7 @@ export function MenuList() {
 
     return (
         <div className='container py-5'>
-            <div className="row g-4 -content-md-center">
+            <div className="row g-5 -content-md-center">
                 {
                     dishes.map((dish) => (
                         <div key={dish.id} className='col-12 col-md-6 col-lg-4 d-flex justify-content-center'>

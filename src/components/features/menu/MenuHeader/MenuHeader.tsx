@@ -11,18 +11,20 @@ export function MenuHeader() {
                     Incluye sopa y pan… ¡pero se agota rápido!
                 </p>
             </div>
-            <h2 className="fw-bold fs-1 text-center mb-3">
-                <span style={{ color: '#ff9f4a' }}> Nuestro </span>{' '}
-                <span> Menú </span>
-                <div className={styles.border} />
-            </h2>
+            <div className='mt-5'>
+                <h2 className="fw-bold fs-1 text-center mb-3">
+                    <span style={{ color: '#ff9f4a' }}> Nuestro </span>{' '}
+                    <span> Menú </span>
+                    <div className={styles.border} />
+                </h2>
 
-            <p className="text-center text-secondary small mb-1">
-                Todos los platos incluyen sopa y pan*
-            </p>
-            <p className="text-center text-secondary small opacity-75 mb-4">
-                *Excepto tamales y empanadas. Traer recipiente para la sopa.
-            </p>
+                <p className="text-center text-secondary small mb-1">
+                    Todos los platos incluyen sopa y pan*
+                </p>
+                <p className="text-center text-secondary small opacity-75 mb-4">
+                    *Excepto tamales y empanadas. Traer recipiente para la sopa.
+                </p>
+            </div>
         </div>
     )
 }
