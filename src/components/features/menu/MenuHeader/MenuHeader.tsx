@@ -2,7 +2,7 @@ import styles from './MenuHeader.module.css'
 
 export function MenuHeader() {
     return (
-        <>
+        <div className='container'>
             <div>
                 <h1>Sabores caceros todos los días</h1>
                 <p className="text-secondary">
@@ -23,6 +23,6 @@ export function MenuHeader() {
             <p className="text-center text-secondary small opacity-75 mb-4">
                 *Excepto tamales y empanadas. Traer recipiente para la sopa.
             </p>
-        </>
+        </div>
     )
 }

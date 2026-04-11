@@ -9,6 +9,19 @@
     object-fit: cover;
 }
 
+/* .titleContainer {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1;
+} */
+
 .text {
     color: var(--text-card) !important;
 }
@@ -17,6 +30,8 @@
     color: var(--text-special);
     font-size: 30px;
     font-weight: bold;
+    /* white-space: nowrap;
+    flex-shrink: 0; */
 }
 
 .orderBtn {
