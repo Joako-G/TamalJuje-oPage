@@ -1,0 +1,27 @@
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+    min-height: 320px;
+    /* Asegura que todas tengan un mínimo de altura */
+}
+
+.card svg {
+    width: 30px;
+    height: 30px;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    /* Ajusta el tamaño para que no sea gigante en tablets */
+    line-height: 1.2;
+    min-height: 3em;
+    /* Reserva espacio para 2 o 3 líneas de título */
+}
+
+.step {
+    height: 50px;
+    width: 50px;
+    background-color: var(--bg-svg);
+    color: var(--text-special);
+}

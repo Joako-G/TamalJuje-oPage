@@ -22,7 +22,9 @@ function App() {
           </Routes>
         </main>
         <WhatsAppButton />
-        <Nav />
+        <div className='d-block d-md-none fixed-bottom'>
+          <Nav />
+        </div>
       </div>
 
     </BrowserRouter>
