@@ -1,6 +1,6 @@
 export function MenuSvg() {
     return (
-        <svg style={{color: "red"}} fill="#ffffff" height="80px" width="80px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
+        <svg fill="#ffffff" height="80px" width="80px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
             viewBox="0 0 512 512" xmlSpace="preserve">
             <g>
                 <g>

@@ -1,8 +1,8 @@
-import { HowToOrder } from "../components/features/hto/HowToOrder";
+import { HowToOrder } from "../components/features/hto/HowToOrder/HowToOrder";
 
 export function OrederPage() {
     return (
-        <div className="container d-flex flex-column align-items-center pb-5 gap-5 mt-5">
+        <div className="container d-flex flex-column justify-content-center mt-5">
             <HowToOrder />
         </div>
     )

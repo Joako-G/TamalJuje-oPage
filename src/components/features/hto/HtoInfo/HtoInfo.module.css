@@ -2,7 +2,7 @@
 
 .card {
     background-color: var(--bg-card);
-    max-width: 400px;
+    /* max-width: 400px; */
 }
 
 .card svg {
@@ -23,7 +23,7 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 500px;
-    max-width: 400px;
+    /* max-width: 400px; */
 }
 
 .containerInfo {

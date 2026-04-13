@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
-import { HomePages } from './pages/HomePages'
+import { HomePage } from './pages/HomePage'
 import { MenuPage } from './pages/MenuPage'
 import { OrederPage } from './pages/OrderPage'
 import { Header } from './components/layout/Header/Header'
@@ -16,13 +16,15 @@ function App() {
         <Header />
         <main className='container-fluid w-100 px-0 content'>
           <Routes>
-            <Route path='/' element={<HomePages />} />
+            <Route path='/' element={<HomePage />} />
             <Route path='/menu' element={<MenuPage />} />
             <Route path='/order' element={<OrederPage />} />
           </Routes>
         </main>
         <WhatsAppButton />
-        <Nav />
+        <div className='d-block d-md-none fixed-bottom'>
+          <Nav />
+        </div>
       </div>
 
     </BrowserRouter>

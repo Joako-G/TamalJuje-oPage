@@ -1,10 +1,27 @@
+import { Link } from 'react-router-dom'
+import { SendSvg } from '../../../icons/SendSvg'
 import styles from './HomeHero.module.css'
+
 
 export function HomeHero() {
     return (
-        <header className={`container-fluid p-4 ${styles.containerBg}`}>
-            <h1 className="display-1 fw-bold col-12">Comidas para llevar</h1>
-            <button type="button" className={`col-12 mt-2 fs-4 rounded-pill btn ${styles.btnOrder}`} >Pedir por WhatsApp</button>
+        <header className={`container-fluid py-5 ${styles.containerBg}`}>
+            <div className='container'>
+                <div className='row mt-5 g-4'>
+                    <h1 className="display-1 fw-bold">Comidas para llevar</h1>
+
+                    <div className='col-12 col-md-6 col-lg-4'>
+                        <button type="button" className={`w-100 d-flex justify-content-center align-items-center gap-2 fs-4 rounded-pill btn ${styles.btnOrder}`} >
+                            <SendSvg />
+                            <span>Pedir por WhatsApp</span>
+                        </button>
+                    </div>
+
+                    <div className='col-12 col-md-5 col-lg-3'>
+                        <Link className={`w-100 h-100 fs-4 rounded-pill btn text-white fw-bold d-flex justify-content-center align-items-center ${styles.btnMenu}`} to='/menu' > Consultar Menú</Link>
+                    </div>
+                </div>
+            </div>
         </header>
     )
 }
