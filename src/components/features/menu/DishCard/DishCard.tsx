@@ -17,8 +17,8 @@ export function DishCard({ dish }: DishCardProps) {
             <img className={`${styles.image}`} src={dishImageSrc} alt={name} loading='lazy' />
             <div className="card-body p-4 d-flex flex-column">
                 <div className={`d-flex flex-wrap justify-content-between align-items-center ${styles.titleContainer}`}>
-                    <h1 className={`card-title text-white fw-bold fs-3 m-0 flex-grow-1 ${styles.title}`}> {name} </h1>
-                    <span className={`${styles.price}`}> $ {price.toLocaleString('es-AR')} </span>
+                    <h1 className={`card-title text-white fw-bold m-0 flex-grow-1 ${styles.title}`}> {name} </h1>
+                    <span className={`fw-bold ${styles.price}`}> $ {price.toLocaleString('es-AR')} </span>
                 </div>
                 <p className={`card-text mt-4 ${styles.text}`}> {description} </p>
                 <button

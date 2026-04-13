@@ -1,0 +1,10 @@
+.amountBtn {
+    background-color: var(--bg-btn);
+    font-weight: bold;
+}
+
+.amountBtn:hover {
+    background-color: var(--bg-btn) !important;
+    transform: scale(0.90);
+    color: black;
+}

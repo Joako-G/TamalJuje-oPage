@@ -1,0 +1,42 @@
+@import '/src/index.css';
+
+.bgCart {
+    background-color: var(--bg-nav);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-height: var(--nav-height);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.bgCart svg {
+    width: 45px;
+    height: 45px;
+}
+
+.totalItem {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    background-color: yellow;
+}
+
+@media (min-width: 768px) {
+    .bgCart svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .totalItem {
+        width: 20px;
+        height: 20px;
+        font-size: 15px;
+    }
+
+    .bgCart .order {
+        font-size: 20px;
+    }
+}
