@@ -1,0 +1,16 @@
+.btnSend {
+    background-color: var(--bg-btn);
+    font-weight: bold;
+}
+
+.btnSend:hover {
+    background-color: var(--bg-btn) !important;
+    transform: scale(0.90);
+    color: black;
+}
+
+@media (min-width: 768px){
+    .btnSend {
+        width: 100%;
+    }
+}
