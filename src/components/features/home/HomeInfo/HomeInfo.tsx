@@ -13,7 +13,7 @@ export function HomeInfo() {
                         <div className="card-body d-flex flex-column text-white  gap-5">
                             <LocationSvg />
                             <div className="mb-auto">
-                                <h3>Ubicaión</h3>
+                                <h3>Ubicación</h3>
                                 <p className='mb-2'> Av. Carlos Snopek N° 1233 M 339 L2</p>
                             </div>
                             <div className={styles.border} />
