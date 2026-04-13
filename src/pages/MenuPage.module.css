@@ -5,9 +5,15 @@
 
 @media (min-width: 768px) {
     .cart {
-        top: 130px;
+        top: 90px;
         right: 0;
         height: 50px;
-        width: 280px;
+        width: 350px;
+    }
+}
+
+@media (min-width: 1024px){
+    .cart {
+        top: 120px;
     }
 }
