@@ -1,7 +1,13 @@
-.border {
-    width: 100px;
-    height: 3px;
-    background-color: #ff9f4a;
-    margin: 8px auto;
-    border-radius: 10px;
+.cart {
+    width: 95%;
+    bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .cart {
+        top: 130px;
+        right: 0;
+        height: 50px;
+        width: 280px;
+    }
 }

@@ -10,7 +10,7 @@
         {
             "id": 2,
             "name": "Empanadas",
-            "price": 10000,
+            "price": 1000,
             "image": "empanada.jpg",
             "description": "Masa dorada y crocante, rellena con carne jugosa y bien condimentada. Un clásico irresistible, perfecto para cualquier momento"
         },
