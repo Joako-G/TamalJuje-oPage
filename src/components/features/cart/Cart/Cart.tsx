@@ -2,11 +2,9 @@ import { useEffect, useState } from 'react'
 import { useCartStore } from '../../../../store/useCartStore'
 import { BagOrderSvg } from '../../../icons/BagOrderSvg'
 import styles from './Cart.module.css'
-import type { ICartItem } from '../../../../interfaces/ICartItem'
-
 
 export function Cart() {
-    const { cart, getTotalPrice, getTotalItem, isOpen, toggleCart, addToCart, updateQuantity } = useCartStore()
+    const { cart, getTotalPrice, getTotalItem, isOpen, toggleCart, updateQuantity } = useCartStore()
     const [total, setTotal] = useState<number>(getTotalPrice())
     const [totalItem, setTotalItem] = useState<number>(getTotalItem())
 
