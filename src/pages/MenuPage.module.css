@@ -5,15 +5,16 @@
 
 @media (min-width: 768px) {
     .cart {
-        top: 90px;
+        top: 130px;
         right: 0;
         height: 50px;
-        width: 350px;
+        width: 300px;
     }
 }
 
 @media (min-width: 1024px){
     .cart {
         top: 120px;
+        width: 400px;
     }
 }

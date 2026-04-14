@@ -1,9 +1,10 @@
 // import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from './HomeCTA.module.css'
 
 export function HomeCTA() {
     return (
-        <section className='container pt-5'>
+        <section id='cta' className='container pt-5'>
             <div className='row row-cols-1 row-cols-md-2 align-items-center'>
 
                 <div className={`col-10 col-lg-7 m-auto position-relative card border-0 rounded-5 ${styles.cardSpecial}`}>
@@ -16,7 +17,7 @@ export function HomeCTA() {
                     </div>
                 </div>
 
-                <div className='col-lg-5 gap-3 ps-5 mt-5'>
+                <div className='col-lg-5 gap-3 ps-5 mt-5 d-flex flex-column justify-content-center align-items-center'>
                     <h3 className={`${styles.title}`}>SABOR AUTÉNTICO</h3>
                     <h1 className='display-1 fs-1 fw-bold'>Masa de maíz criollo, pasión casera y listo para retirar.</h1>
                     <p className='text-secondary'>
@@ -27,6 +28,9 @@ export function HomeCTA() {
                         calidad; reservá tu plato favorito por WhatsApp antes de que se agoten.
                         ¡A las 16:00 hs volamos!
                     </p>
+                    <Link to='/menu' type='button' className={`btn ${styles.btn}`}>
+                        Nuestro menú
+                    </Link>
                 </div>
             </div>
         </section>

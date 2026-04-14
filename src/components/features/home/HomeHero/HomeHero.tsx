@@ -11,14 +11,16 @@ export function HomeHero() {
                     <h1 className="display-1 fw-bold">Comidas para llevar</h1>
 
                     <div className='col-12 col-md-6 col-lg-4'>
-                        <button type="button" className={`w-100 d-flex justify-content-center align-items-center gap-2 fs-4 rounded-pill btn ${styles.btnOrder}`} >
+                        <Link to='/menu' type="button" className={`w-100 d-flex justify-content-center align-items-center gap-2 fs-4 rounded-pill btn ${styles.btnOrder}`} >
                             <SendSvg />
                             <span>Pedir por WhatsApp</span>
-                        </button>
+                        </Link>
                     </div>
 
                     <div className='col-12 col-md-5 col-lg-3'>
-                        <Link className={`w-100 h-100 fs-4 rounded-pill btn text-white fw-bold d-flex justify-content-center align-items-center ${styles.btnMenu}`} to='/menu' > Consultar Menú</Link>
+                        <a href='#cta' className={`w-100 h-100 fs-4 rounded-pill btn text-white fw-bold d-flex justify-content-center align-items-center ${styles.btnMenu}`}>
+                            Más información
+                        </a>
                     </div>
                 </div>
             </div>
