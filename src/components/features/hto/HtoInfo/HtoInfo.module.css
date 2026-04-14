@@ -3,6 +3,7 @@
 .card {
     background-color: var(--bg-card);
     /* max-width: 400px; */
+    height: auto;
 }
 
 .card svg {

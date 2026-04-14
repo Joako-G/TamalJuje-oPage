@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { LocationSvg } from "../../../icons/LocationSvg";
 import { MessageSvg } from "../../../icons/MessageSvg";
 import styles from './HtoInfo.module.css'
@@ -20,8 +21,8 @@ export function HtoInfo() {
                 </div>
 
 
-                <div>
-                    <button className={`my-5 mt-lg-0 d-flex flex-column align-items-start text-start rounded-4 p-4 w-100 ${styles.card} ${styles.wp}`}>
+                <div className="d-flex flex-column">
+                    <Link to='/menu' className={`my-5 mt-lg-0 d-flex flex-column align-items-start text-start rounded-4 p-4 w-100 text-decoration-none text-black ${styles.card} ${styles.wp}`}>
                         <MessageSvg />
                         <h2 className='fw-bold'>Ordenar por WhatsApp</h2>
                         <p>
@@ -29,7 +30,7 @@ export function HtoInfo() {
                             Confirmamos disponibilidad antes de preparar.
                         </p>
                         {/* <p>⚠️ Puede requerirse pago previo por transferencia.</p> */}
-                    </button>
+                    </Link>
 
                     <div className={`p-4 w-100 rounded-4 ${styles.card}`}>
                         <h3>Horarios de atención</h3>

@@ -24,6 +24,15 @@
     background-color: yellow;
 }
 
+.order {
+    font-size: 2rem;
+}
+
+.total {
+    font-size: 1.4rem;
+    margin-top: 5px;
+}
+
 @media (min-width: 768px) {
     .bgCart svg {
         width: 35px;
@@ -31,12 +40,14 @@
     }
 
     .totalItem {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
         font-size: 15px;
     }
 
-    .bgCart .order {
-        font-size: 20px;
+    .order {
+        font-size: 1.8rem;
     }
+
+
 }

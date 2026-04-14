@@ -14,16 +14,16 @@ export function CartFloatingBar() {
     }, [cart])
 
     return (
-        <div className={`d-flex gap-5 gap-md-0 px-4 align-items-center mb-5 mb-md-0 rounded-pill ${styles.bgCart}`}>
+        <div className={`d-flex gap-5 px-5 px-md-3 align-items-center justify-content-between justify-content-md-center justify-content-lg-between mb-5 mb-md-0 rounded-pill ${styles.bgCart}`}>
             <div className='d-flex gap-3 justify-content-center align-items-center'>
                 <div className='d-flex position-relative'>
                     <BagOrderSvg />
                     <span className={`text-black text-center rounded-circle ${styles.totalItem}`}> {totalItem} </span>
                 </div>
-                <span className={`text-start ${styles.order}`}>Orden</span>
+                <span className={`align-self-center ${styles.order}`}>Orden</span>
             </div>
 
-            <span className='m-auto'> ${(total).toLocaleString('es-AR')} </span>
+            <span className={`${styles.total}`}> ${(total).toLocaleString('es-AR')} </span>
         </div>
     )
 }

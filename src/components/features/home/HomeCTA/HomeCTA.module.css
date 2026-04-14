@@ -32,3 +32,13 @@
 .price {
     color: var(--text-special);
 }
+
+.btn {
+    background-color: var(--bg-btn);
+}
+
+.btn:hover {
+    transform: scale(0.95);
+    background-color: var(--bg-btn);
+    color: black;
+}
