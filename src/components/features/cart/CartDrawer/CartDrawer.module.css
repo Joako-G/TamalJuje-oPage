@@ -10,6 +10,22 @@
     cursor: pointer;
 }
 
+.cartScrollArea {
+    max-height: 24vh;
+    overflow-y: auto;
+    padding-right: 5px;
+    padding-top: 20px;
+}
+
+.cartScrollArea::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cartScrollArea::-webkit-scrollbar-thumb {
+    background-color: var(--bg-btn);
+    border-radius: 10px;
+}
+
 .bgCart svg {
     width: 45px;
     height: 45px;
