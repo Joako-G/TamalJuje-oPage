@@ -2,10 +2,12 @@
 
 .card {
     background-color: var(--bg-card);
-    /* max-width: 400px; */
-    height: auto;
+    height: auto !important;
 }
 
+.cards {
+    height: auto !important;
+}
 .card svg {
     width: 30px;
     height: 30px;
@@ -24,7 +26,6 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 500px;
-    /* max-width: 400px; */
 }
 
 .containerInfo {
@@ -49,4 +50,8 @@
 .wp svg {
     height: 50px;
     width: 50px;
+}
+
+.location {
+    color: var(--text-special);
 }

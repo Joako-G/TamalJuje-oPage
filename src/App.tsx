@@ -6,12 +6,13 @@ import { OrederPage } from './pages/OrderPage'
 import { Header } from './components/layout/Header/Header'
 import { Nav } from './components/layout/Nav/Nav'
 import { WhatsAppButton } from './components/layout/WhatsAppButton/WhatsAppButton'
+import { ScrollTop } from './components/utils/ScrollTop'
 
 function App() {
 
   return (
     <BrowserRouter>
-
+      <ScrollTop />
       <div className='container-fluid d-flex flex-column p-0 m-0 min-vh-100 '>
         <Header />
         <main className='container-fluid w-100 px-0 content'>
