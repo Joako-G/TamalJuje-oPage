@@ -21,14 +21,12 @@ export function HomeCTA() {
                     <h3 className={`${styles.title}`}>SABOR AUTÉNTICO</h3>
                     <h1 className='display-1 fs-1 fw-bold'>Masa de maíz criollo, pasión casera y listo para retirar.</h1>
                     <p className='text-secondary'>
-                        Nuestros famosos tamales de maíz criollo son el corazón de la casa. Pero nuestra pasión no termina
-                        ahí: todos los días cocinamos una variedad de platos regionales frescos,
-                        desde humitas hasta especialidades del día, siempre con
-                        ingredientes locales. Cocinamos lotes limitados para asegurar la máxima
-                        calidad; reservá tu plato favorito por WhatsApp antes de que se agoten.
-                        ¡A las 16:00 hs volamos!
+                        Nuestros famosos tamales de maíz criollo son el corazón de la casa. Pero nuestra pasión no termina ahí: todos
+                        los días cocinamos una variedad de platos regionales frescos —desde humitas hasta especialidades del día—
+                        siempre con ingredientes locales. Cocinamos lotes limitados para asegurar la máxima calidad; reservá tu plato
+                        favorito por WhatsApp antes de que se agoten. ¡A las 16:00 hs volamos!
                     </p>
-                    <Link to='/menu' type='button' className={`btn ${styles.btn}`}>
+                    <Link to='/menu' type='button' className={`btn ${styles.btnOurMenu}`}>
                         Nuestro menú
                     </Link>
                 </div>

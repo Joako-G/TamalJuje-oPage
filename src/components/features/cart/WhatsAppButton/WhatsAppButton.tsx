@@ -27,8 +27,8 @@ export function WhatsAppButton() {
             disabled={!isEnabled}
             onClick={handleSendOrder}
             type="button"
-            className={`btn px-1 fw-bold w-100 ${styles.btnSend}`}>
-            Cofirmar pedido
+            className={`btn fw-bold w-100 ${styles.btnSend}`}>
+            Confirmar pedido
         </button>
     )
 }

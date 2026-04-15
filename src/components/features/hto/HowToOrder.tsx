@@ -54,7 +54,7 @@ export function HowToOrder() {
                         Puede requerirse pago previo por transferencia.
                     </p>
 
-                    <div className='text-end'>
+                    <div className={`text-end mt-5 w-100 ${styles.send}`}>
                         <SendSvg />
                     </div>
 
