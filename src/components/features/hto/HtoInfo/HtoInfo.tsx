@@ -7,7 +7,7 @@ import styles from './HtoInfo.module.css'
 export function HtoInfo() {
     return (
         <div className="container-fluid p-0">
-            <div className="d-lg-flex gap-5 justify-content-center align-items-start">
+            <div className="d-lg-flex gap-5 justify-content-center align-items-stretch">
                 <div className={`d-flex justify-content-center align-items-end pb-5 rounded-4 w-100 ${styles.bg}`} >
                     <div className={`p-4 w-75 rounded-4 ${styles.containerInfo}`}>
                         <div className='d-flex align-items-center'>
@@ -21,7 +21,7 @@ export function HtoInfo() {
                 </div>
 
 
-                <div className="d-flex flex-column">
+                <div className={`d-flex flex-column h-100 ${styles.cards}`}>
                     <Link to='/menu' className={`my-5 mt-lg-0 d-flex flex-column align-items-start text-start rounded-4 p-4 w-100 text-decoration-none text-black ${styles.card} ${styles.wp}`}>
                         <MessageSvg />
                         <h2 className='fw-bold'>Ordenar por WhatsApp</h2>
@@ -32,7 +32,7 @@ export function HtoInfo() {
                         {/* <p>⚠️ Puede requerirse pago previo por transferencia.</p> */}
                     </Link>
 
-                    <div className={`p-4 w-100 rounded-4 ${styles.card}`}>
+                    <div className={`p-4 w-100 rounded-4 flex-grow-1 h-auto ${styles.card}`}>
                         <h3>Horarios de atención</h3>
 
                         <p className='mb-3'>🕑 Todos los días</p>
