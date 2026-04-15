@@ -3,14 +3,13 @@
     font-weight: bold;
 }
 
-.btnSend:hover {
-    background-color: var(--bg-btn) !important;
-    transform: scale(0.90);
+.btnSend {
+    background-color: var(--bg-btn);
+    transform: scale(0.98);
     color: black;
 }
 
-@media (min-width: 768px){
-    .btnSend {
-        width: 100%;
-    }
+.btnSend:hover {
+    background-color: #faa038;
+    color: black;
 }

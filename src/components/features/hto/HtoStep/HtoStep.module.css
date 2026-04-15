@@ -11,6 +11,15 @@
     height: 30px;
 }
 
+.card svg,
+.card svg path {
+    stroke: #fd8b00;
+}
+
+.card svg rect {
+    stroke: none !important;
+}
+
 .card h3 {
     font-size: 1.25rem;
     /* Ajusta el tamaño para que no sea gigante en tablets */

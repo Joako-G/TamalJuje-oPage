@@ -4,7 +4,6 @@
 }
 
 .amountBtn:hover {
-    background-color: var(--bg-btn) !important;
-    transform: scale(0.90);
+    background-color: #faa038;
     color: black;
 }

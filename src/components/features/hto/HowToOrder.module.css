@@ -10,6 +10,10 @@
     height: 30px;
 }
 
+.send {
+    background-color: red !important;
+}
+
 .step {
     height: 50px;
     width: 50px;
@@ -41,7 +45,6 @@
 
 .wp {
     border: none;
-    /* background-color: var(--bg-btn); */
     background: linear-gradient(168deg, rgba(255, 194, 51, 1) 0%, rgba(253, 121, 6, 1) 100%);
 }
 
