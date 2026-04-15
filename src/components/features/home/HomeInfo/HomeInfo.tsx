@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BagSvg } from "../../../icons/BagSvg";
 import { LocationSvg } from "../../../icons/LocationSvg";
 import { WatchSvg } from "../../../icons/WatchSvg";
@@ -17,7 +18,13 @@ export function HomeInfo() {
                                 <p className='mb-2'> Av. Carlos Snopek N° 1233 M 339 L2</p>
                             </div>
                             <div className={styles.border} />
-                            <a href="" className='text-decoration-none'>VER DIRECCIÓN</a>
+                            <div className="d-flex">
+                                <a
+                                    href="https://www.google.com/maps/place/El+Tamal+Jujue%C3%B1o/@-24.2450411,-65.2652136,18z/data=!4m10!1m2!2m1!1stamal+jujuy!3m6!1s0x941b07cc832d6087:0xf4f5aa363cee09dd!8m2!3d-24.2450476!4d-65.2628046!15sCgt0YW1hbCBqdWp1eVoNIgt0YW1hbCBqdWp1eZIBDW1lYWxfdGFrZWF3YXmaAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMnhuTlZwSVRsUk9WVlpNVTFNeGEyUnNSazlYVldSRFlsUnNhVlV3UlJBQuABAPoBBAgAED8!16s%2Fg%2F11rw7fwm9t?entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D"
+                                    className='text-decoration-none d-flex'>
+                                    VER DIRECCIÓN
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -28,15 +35,19 @@ export function HomeInfo() {
                             <WatchSvg />
                             <div className='row mb-auto'>
                                 <h3>Horarios de atención</h3>
-                                <div className='col-5'>
-                                    <p>Todos los dias </p>
-                                </div>
-                                <div className='col-7'>
-                                    <p>09:00 - 15:30 (Aprox)</p>
-                                </div>
+                                <p className="mb-2">Todos los dias </p>
+                                <p>09:00 - 15:30 (Aprox)</p>
                             </div>
                             <div className={`${styles.border}`} />
-                            <button type='button' className={`btn d-block fw-bold text-start p-0 ${styles.btnOrderNow}`}> PEDIR AHORA</button>
+                            <div className="d-flex">
+                                <Link
+                                    to='/menu'
+                                    type='button'
+                                    className={`btn d-block fw-bold text-start p-0 ${styles.btnOrderNow}`}
+                                >
+                                    PEDIR AHORA
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

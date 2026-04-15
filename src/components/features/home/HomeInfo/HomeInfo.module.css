@@ -15,6 +15,10 @@
     color: var(--text-special);
 }
 
+.card a:hover {
+    color: #fda131;
+}
+
 .cardDelivery {
     background-color: var(--bg-card-home);
     color: black;
@@ -32,5 +36,9 @@
 }
 
 .btnOrderNow {
-    color: yellow;
+    color: yellow !important;
+}
+
+.btnOrderNow:hover {
+    color: rgb(138, 138, 0) !important;
 }
