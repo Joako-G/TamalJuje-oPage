@@ -20,7 +20,8 @@ export function HomeInfo() {
                             <div className={styles.border} />
                             <div className="d-flex">
                                 <a
-                                    href="https://www.google.com/maps/place/El+Tamal+Jujue%C3%B1o/@-24.2450411,-65.2652136,18z/data=!4m10!1m2!2m1!1stamal+jujuy!3m6!1s0x941b07cc832d6087:0xf4f5aa363cee09dd!8m2!3d-24.2450476!4d-65.2628046!15sCgt0YW1hbCBqdWp1eVoNIgt0YW1hbCBqdWp1eZIBDW1lYWxfdGFrZWF3YXmaAURDaTlEUVVsUlFVTnZaRU5vZEhsalJqbHZUMnhuTlZwSVRsUk9WVlpNVTFNeGEyUnNSazlYVldSRFlsUnNhVlV3UlJBQuABAPoBBAgAED8!16s%2Fg%2F11rw7fwm9t?entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D"
+                                    href="https://www.google.com/maps/place/El+Tamal+Jujue%C3%B1o/@-24.2450411,-65.2652136,18z/data=!4m6!3m5!1s0x941b07cc832d6087:0xf4f5aa363cee09dd!8m2!3d-24.2450476!4d-65.2628046!16s%2Fg%2F11rw7fwm9t?entry=ttu&g_ep=EgoyMDI2MDQxMi4wIKXMDSoASAFQAw%3D%3D"
+                                    target="_blank"
                                     className='text-decoration-none d-flex'>
                                     VER DIRECCIÓN
                                 </a>
