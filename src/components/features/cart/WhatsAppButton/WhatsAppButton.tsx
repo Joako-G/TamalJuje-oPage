@@ -6,7 +6,7 @@ export function WhatsAppButton() {
     const isEnabled = cart.length > 0
 
     const handleSendOrder = () => {
-        const myNumber = "5493885188333"
+        const myNumber = "93884095206"
 
         // FORMATEAR LA LISTA DE PRODUCTOS
         const itemsText = cart.map((item) =>
