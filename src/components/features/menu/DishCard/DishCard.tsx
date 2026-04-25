@@ -8,13 +8,13 @@ interface DishCardProps {
 
 export function DishCard({ dish }: DishCardProps) {
     const { addToCart } = useCartStore()
-    const { name, price, image, description } = dish
-    const dishImageSrc = image ? `/images/${image}` : '/images/logo.jpeg'
+    const { name, price, image_url, description } = dish
+    const dishImageSrc = image_url ? image_url : '/images/logo.jpeg'
 
 
     return (
-        <div className={`card d-flex flex-column gap-1 p-0  ${styles.dish}`}>
-            <img className={`${styles.image}`} src={dishImageSrc} alt={name} loading='lazy' />
+        <div className={`card d-flex flex-column gap-1 p-0 w-100  ${styles.dish}`}>
+            <img className={` ${styles.image}`} src={dishImageSrc} alt={name} loading='lazy' />
             <div className="card-body p-4 d-flex flex-column">
                 <div className={`d-flex flex-wrap justify-content-between align-items-center ${styles.titleContainer}`}>
                     <h1 className={`card-title text-white fw-bold m-0 flex-grow-1 ${styles.title}`}> {name} </h1>
