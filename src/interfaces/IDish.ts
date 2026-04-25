@@ -1,7 +1,8 @@
 export interface IDish {
     id: number,
     name: string,
+    description: string,
     price: number,
-    image: string,
-    description: string
+    enabled: boolean,
+    image_url: string,
 }

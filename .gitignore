@@ -1,3 +1,8 @@
+# Local env files (Aquí es donde vive tu configuración de Supabase)
+.env
+.env.local
+.env.*.local
+
 # Logs
 logs
 *.log
