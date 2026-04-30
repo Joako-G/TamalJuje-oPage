@@ -8,4 +8,5 @@ export interface IDish {
     menu_day: string,
     // Optional default sides (guarniciones) for the dish
     sides?: { id: number; name: string }[],
+    allows_extra_side?: boolean;
 }

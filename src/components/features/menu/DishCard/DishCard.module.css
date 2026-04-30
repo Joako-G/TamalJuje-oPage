@@ -239,3 +239,21 @@
         font-size: 20px;
     }
 }
+
+.extraSideLabel {
+    cursor: pointer;
+    color: var(--text-special);
+    transition: opacity 0.2s ease;
+    user-select: none;
+}
+
+.extraSideLabel:hover {
+    opacity: 0.8;
+}
+
+.extraSideCheckbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    accent-color: var(--bg-btn);
+}

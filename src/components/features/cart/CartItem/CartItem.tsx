@@ -6,19 +6,22 @@ interface CartItemProps {
     quantity: number;
     price: number;
     selectedSides: string[];
+    wantsExtraSide?: boolean;
     subsAmount: (event: React.MouseEvent, key: string) => void;
     addAmount: (event: React.MouseEvent, key: string) => void;
 }
 
-export function CartItem({ cartKey, name, quantity, price, selectedSides, subsAmount, addAmount }: CartItemProps) {
-    const sidesText = selectedSides.length > 0 ? selectedSides.join(', ') : null;
+export function CartItem({ cartKey, name, quantity, price, selectedSides, wantsExtraSide, subsAmount, addAmount }: CartItemProps) {
+    const sidesText = selectedSides.length > 0 ? selectedSides.join(', ') : '';
+    const extraSideText = wantsExtraSide ? ' + Chuño' : '';
+    const fullSidesText = (sidesText || extraSideText) ? `${sidesText}${extraSideText}` : null;
 
     return (
         <div className={styles.cartItem}>
             <div className={styles.itemInfo}>
                 <span className={styles.itemName}>{name}</span>
-                {sidesText && (
-                    <small className={styles.sidesInfo}>{sidesText}</small>
+                {fullSidesText && (
+                    <small className={styles.sidesInfo}>{fullSidesText}</small>
                 )}
             </div>
             <div className={styles.quantityControls}>

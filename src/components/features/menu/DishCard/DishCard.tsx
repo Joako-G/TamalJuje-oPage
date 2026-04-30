@@ -20,6 +20,7 @@ export function DishCard({ dish, allSides }: DishCardProps) {
     const [editing, setEditing] = useState(false)
     const [side1, setSide1] = useState<string>(dish.sides?.[0]?.name ?? '')
     const [side2, setSide2] = useState<string>(dish.sides?.[1]?.name ?? '')
+    const [wantsExtraSide, setWantsExtraSide] = useState(false)
     const [addedFeedback, setAddedFeedback] = useState(false)
 
     const defaultSideNames = dish.sides?.map(s => s.name) ?? []
@@ -29,13 +30,13 @@ export function DishCard({ dish, allSides }: DishCardProps) {
     const side2Options = allSides.filter(s => s.name !== side1)
 
     const handleAddDefault = () => {
-        addToCart(dish, defaultSideNames)
+        addToCart(dish, defaultSideNames, wantsExtraSide)
         triggerFeedback()
     }
 
     const handleConfirmEdited = () => {
         const selectedSides = [side1, side2].filter(Boolean)
-        addToCart(dish, selectedSides)
+        addToCart(dish, selectedSides, wantsExtraSide)
         setEditing(false)
         triggerFeedback()
     }
@@ -44,6 +45,7 @@ export function DishCard({ dish, allSides }: DishCardProps) {
         // Reset to defaults
         setSide1(dish.sides?.[0]?.name ?? '')
         setSide2(dish.sides?.[1]?.name ?? '')
+        setWantsExtraSide(false)
         setEditing(false)
     }
 
@@ -77,20 +79,47 @@ export function DishCard({ dish, allSides }: DishCardProps) {
                 <div className={`my-3 ${styles.content}`}>
                     <p className={`card-text mt-4 ${styles.text}`}> {description} </p>
 
-                    {hasSides && !editing && (
+                    {(hasSides || dish.allows_extra_side) && !editing && (
                         <div className='d-flex flex-column gap-2 my-3'>
-                            <small className={styles.sidesLabel}>Guarniciones:</small>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <small className={styles.sidesLabel}>Guarniciones:</small>
+
+                            </div>
                             <div className={styles.sidesContainer}>
-                                {dish.sides!.map(s => (
+                                {dish.sides?.map(s => (
                                     <span key={s.id} className={styles.sidesBadge}>{s.name}</span>
                                 ))}
+                                {dish.allows_extra_side && (
+                                    <label className={`d-flex align-items-center gap-2 ms-4 ${styles.extraSideLabel}`}>
+                                        <input
+                                            type="checkbox"
+                                            checked={wantsExtraSide}
+                                            onChange={(e) => setWantsExtraSide(e.target.checked)}
+                                            className={styles.extraSideCheckbox}
+                                        />
+                                        <span className="small">¿Chuño?</span>
+                                    </label>
+                                )}
                             </div>
                         </div>
                     )}
 
                     {hasSides && editing && (
                         <div className={`d-flex flex-column gap-2 my-3 ${styles.editSection}`}>
-                            <small className={styles.sidesLabel}>Elegí tus guarniciones:</small>
+                            <div className="d-flex justify-content-between align-items-center">
+                                <small className={styles.sidesLabel}>Elegí tus guarniciones:</small>
+                                {dish.allows_extra_side && (
+                                    <label className={`d-flex align-items-center gap-2 ${styles.extraSideLabel}`}>
+                                        <input
+                                            type="checkbox"
+                                            checked={wantsExtraSide}
+                                            onChange={(e) => setWantsExtraSide(e.target.checked)}
+                                            className={styles.extraSideCheckbox}
+                                        />
+                                        <span className="small">¿Chuño?</span>
+                                    </label>
+                                )}
+                            </div>
                             <div className={styles.selectGroup}>
                                 <select
                                     value={side1}

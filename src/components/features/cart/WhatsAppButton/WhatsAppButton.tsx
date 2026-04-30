@@ -10,8 +10,11 @@ export function WhatsAppButton() {
 
         // FORMATEAR LA LISTA DE PRODUCTOS
         const itemsText = cart.map((item) => {
-            const sidesStr = item.selectedSides && item.selectedSides.length > 0
-                ? ` (${item.selectedSides.join(', ')})`
+            const sidesArr = [...(item.selectedSides || [])];
+            if (item.wantsExtraSide) sidesArr.push('Chuño');
+            
+            const sidesStr = sidesArr.length > 0
+                ? ` (${sidesArr.join(', ')})`
                 : '';
             return `-  ${item.name}${sidesStr} x ${item.quantity} ($${(item.price * item.quantity).toLocaleString('es-AR')})`;
         }).join(`\n`)
