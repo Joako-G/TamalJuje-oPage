@@ -7,12 +7,22 @@ interface CartState {
     cart: ICartItem[];
     isOpen: boolean;
     error: string | null;
-    addToCart: (dish: IDish) => void;
-    removeToCart: (id: number) => void
-    updateQuantity: (id: number, amount: number) => void;
+    addToCart: (dish: IDish, selectedSides?: string[]) => void;
+    removeToCart: (cartKey: string) => void
+    updateQuantity: (cartKey: string, amount: number) => void;
     toggleCart: () => void;
     getTotalPrice: () => number,
     getTotalItem: () => number
+}
+
+/** Generate a unique key for a cart item based on dish id + sorted sides */
+function cartKey(dishId: number, sides: string[]): string {
+    const sortedSides = [...sides].sort().join('|');
+    return `${dishId}::${sortedSides}`;
+}
+
+export function getCartKey(item: ICartItem): string {
+    return cartKey(item.id, item.selectedSides);
 }
 
 export const useCartStore = create<CartState>()(
@@ -24,33 +34,36 @@ export const useCartStore = create<CartState>()(
 
             toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
 
-            addToCart: (dish) => {
+            addToCart: (dish, selectedSides) => {
+                const sides = selectedSides ?? dish.sides?.map(s => s.name) ?? [];
+                const key = cartKey(dish.id, sides);
                 const currentCart = get().cart;
-                const isItemCart = currentCart.find((item) => item.id === dish.id)
+                const existingItem = currentCart.find(item => cartKey(item.id, item.selectedSides) === key);
 
-                if (isItemCart) {
-                    // Esta en el carrito
+                if (existingItem) {
+                    // Already in the cart with same sides — increment quantity
                     set({
                         cart: currentCart.map((item) =>
-                            item.id === dish.id ? { ...item, quantity: item.quantity + 1 } : item
+                            cartKey(item.id, item.selectedSides) === key
+                                ? { ...item, quantity: item.quantity + 1 }
+                                : item
                         )
                     })
                 } else {
-                    console.log('Entra')
-                    // Agregar en caso de que el Item no se encuentre en el carrito
-                    set({ cart: [...currentCart, { ...dish, quantity: 1 }] })
+                    // New item (or same dish with different sides)
+                    set({ cart: [...currentCart, { ...dish, quantity: 1, selectedSides: sides }] })
                 }
             },
 
-            removeToCart: (id) => set((state) => ({
-                cart: state.cart.filter((item) => item.id !== id)
+            removeToCart: (key) => set((state) => ({
+                cart: state.cart.filter((item) => getCartKey(item) !== key)
             })),
 
-            updateQuantity: (id, amount) => {
+            updateQuantity: (key, amount) => {
                 const currentCart = get().cart
                 set({
                     cart: currentCart.map((item) =>
-                        item.id === id ? { ...item, quantity: item.quantity + amount } : item
+                        getCartKey(item) === key ? { ...item, quantity: item.quantity + amount } : item
                     ).filter((item) => item.quantity > 0)
                 })
             },

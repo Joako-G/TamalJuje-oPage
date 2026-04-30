@@ -1,29 +1,52 @@
 @import '/src/index.css';
 
 .bgCart {
-    background-color: var(--bg-nav);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(14, 14, 14, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
     min-height: var(--nav-height);
     font-size: 15px;
     cursor: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.cartTitle {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    width: 100%;
+    text-align: center;
 }
 
 .cartScrollArea {
-    max-height: 24vh;
+    max-height: 28vh;
     overflow-y: auto;
     padding-right: 5px;
-    padding-top: 20px;
+    padding-top: 12px;
 }
 
 .cartScrollArea::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
 }
 
 .cartScrollArea::-webkit-scrollbar-thumb {
     background-color: var(--bg-btn);
     border-radius: 10px;
+}
+
+.cartScrollArea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.emptyMsg {
+    color: #666;
+    font-size: 0.85rem;
+    padding: 1rem 0;
 }
 
 .bgCart svg {
