@@ -7,7 +7,7 @@ interface CartState {
     cart: ICartItem[];
     isOpen: boolean;
     error: string | null;
-    addToCart: (dish: IDish, selectedSides?: string[]) => void;
+    addToCart: (dish: IDish, selectedSides?: string[], wantsExtraSide?: boolean) => void;
     removeToCart: (cartKey: string) => void
     updateQuantity: (cartKey: string, amount: number) => void;
     toggleCart: () => void;
@@ -15,14 +15,14 @@ interface CartState {
     getTotalItem: () => number
 }
 
-/** Generate a unique key for a cart item based on dish id + sorted sides */
-function cartKey(dishId: number, sides: string[]): string {
+/** Generate a unique key for a cart item based on dish id + sorted sides + extra side choice */
+function cartKey(dishId: number, sides: string[], wantsExtraSide?: boolean): string {
     const sortedSides = [...sides].sort().join('|');
-    return `${dishId}::${sortedSides}`;
+    return `${dishId}::${sortedSides}::${wantsExtraSide ? 'extra' : 'no-extra'}`;
 }
 
 export function getCartKey(item: ICartItem): string {
-    return cartKey(item.id, item.selectedSides);
+    return cartKey(item.id, item.selectedSides, item.wantsExtraSide);
 }
 
 export const useCartStore = create<CartState>()(
@@ -34,24 +34,24 @@ export const useCartStore = create<CartState>()(
 
             toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
 
-            addToCart: (dish, selectedSides) => {
+            addToCart: (dish, selectedSides, wantsExtraSide) => {
                 const sides = selectedSides ?? dish.sides?.map(s => s.name) ?? [];
-                const key = cartKey(dish.id, sides);
+                const key = cartKey(dish.id, sides, wantsExtraSide);
                 const currentCart = get().cart;
-                const existingItem = currentCart.find(item => cartKey(item.id, item.selectedSides) === key);
+                const existingItem = currentCart.find(item => getCartKey(item) === key);
 
                 if (existingItem) {
-                    // Already in the cart with same sides — increment quantity
+                    // Already in the cart with same options — increment quantity
                     set({
                         cart: currentCart.map((item) =>
-                            cartKey(item.id, item.selectedSides) === key
+                            getCartKey(item) === key
                                 ? { ...item, quantity: item.quantity + 1 }
                                 : item
                         )
                     })
                 } else {
-                    // New item (or same dish with different sides)
-                    set({ cart: [...currentCart, { ...dish, quantity: 1, selectedSides: sides }] })
+                    // New item (different combination of sides/extra)
+                    set({ cart: [...currentCart, { ...dish, quantity: 1, selectedSides: sides, wantsExtraSide }] })
                 }
             },
 
@@ -78,8 +78,9 @@ export const useCartStore = create<CartState>()(
 
         }),
         {
-            name: 'cart-storage',
-            partialize: (state) => ({ cart: state.cart })
+            name: 'cart-storage-v2',
+            partialize: (state) => ({ cart: state.cart }),
+            version: 1
         }
     )
 )

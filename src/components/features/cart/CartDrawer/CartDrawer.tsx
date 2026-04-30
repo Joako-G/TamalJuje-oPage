@@ -32,6 +32,7 @@ export function CartDrawer() {
                                 price={item.price}
                                 quantity={item.quantity}
                                 selectedSides={item.selectedSides}
+                                wantsExtraSide={item.wantsExtraSide}
                                 subsAmount={subsAmount}
                                 addAmount={addAmount}
                             />
