@@ -9,9 +9,12 @@ export function WhatsAppButton() {
         const myNumber = "93884095206"
 
         // FORMATEAR LA LISTA DE PRODUCTOS
-        const itemsText = cart.map((item) =>
-            `-  ${item.name} x ${item.quantity} ($${(item.price * item.quantity).toLocaleString('es-AR')})`)
-            .join(`\n`)
+        const itemsText = cart.map((item) => {
+            const sidesStr = item.selectedSides && item.selectedSides.length > 0
+                ? ` (${item.selectedSides.join(', ')})`
+                : '';
+            return `-  ${item.name}${sidesStr} x ${item.quantity} ($${(item.price * item.quantity).toLocaleString('es-AR')})`;
+        }).join(`\n`)
 
         // CREAR EL MENSAJE
         const message = `¡Hola! Quisiera realizar un pedido:\n\n${itemsText}\n\n*Total: ${getTotalPrice().toLocaleString('es-AR')}*\n\nNombre: \nApellido: \n(Por favor complete sus datos arriba)`
