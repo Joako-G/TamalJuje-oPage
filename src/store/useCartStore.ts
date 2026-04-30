@@ -78,8 +78,9 @@ export const useCartStore = create<CartState>()(
 
         }),
         {
-            name: 'cart-storage',
-            partialize: (state) => ({ cart: state.cart })
+            name: 'cart-storage-v2',
+            partialize: (state) => ({ cart: state.cart }),
+            version: 1
         }
     )
 )
