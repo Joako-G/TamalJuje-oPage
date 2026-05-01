@@ -57,7 +57,7 @@ export function DishCard({ dish, allSides }: DishCardProps) {
     return (
         <div className={`card d-flex flex-column gap-1 p-0 w-100  ${styles.dish}`}>
             <div className='container-fluid p-0 w-auto m-0 position-relative'>
-                <img className={` ${styles.image}`} src={dishImageSrc} alt={name} loading='lazy' />
+                <img className={` ${styles.image}`} src={dishImageSrc} alt={dishImageSrc} loading='lazy' />
                 {!dish.enabled &&
                     <div className={`position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center ${styles.disabledOverlay}`}>
                         <span className='text-white fw-bold'>No disponible</span>

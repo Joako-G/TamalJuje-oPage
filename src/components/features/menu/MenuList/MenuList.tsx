@@ -9,6 +9,8 @@ export function MenuList() {
     const { dishes, loading, error } = useGetDishes()
     const [allSides, setAllSides] = useState<ISide[]>([])
 
+    // dev: render count (removed heavy debug logs)
+
     useEffect(() => {
         getAllSides()
             .then(setAllSides)

@@ -10,9 +10,11 @@ export function useGetDishes() {
 
     useEffect(() => {
         let isMounted = true
+        const debounceRef = { current: 0 as number }
 
-        const load = async () => {
+        const load = async (showLoading = true) => {
             try {
+                if (showLoading) setLoading(true)
                 const data = await getDishes()
                 if (isMounted) setDishes(data)
             } catch (err) {
@@ -24,47 +26,34 @@ export function useGetDishes() {
 
         load()
 
-        const sortByPrice = (arr: IDish[]) => arr.slice().sort((a, b) => a.price - b.price)
+        // debounce helper to coalesce rapid realtime events
+        const scheduleRefresh = (delay = 200) => {
+            if (debounceRef.current) {
+                clearTimeout(debounceRef.current)
+            }
+            debounceRef.current = window.setTimeout(() => {
+                load(false)
+                debounceRef.current = 0
+            }, delay) as unknown as number
+        }
 
-
+        // create a unique channel id per hook instance
+        const channelId = `dishes-realtime-${Math.random().toString(36).substring(7)}`
         const channel = supabase
-            .channel('public:dishes')
-            .on('postgres_changes', { event: '*', schema: 'public', table: 'dishes' }, (payload) => {
-                if (!isMounted) return
-                const p = payload as any
-                const hasNew = !!p.new
-                const hasOld = !!p.old
-
-                if (hasNew && !hasOld) {
-                    // INSERT
-                    const newDish = p.new as IDish
-                    setDishes(prev => sortByPrice([...prev.filter(d => d.id !== newDish.id), newDish]))
-                    return
-                }
-
-                if (hasNew && hasOld) {
-                    // UPDATE
-                    const updated = p.new as IDish
-                    setDishes(prev => sortByPrice(prev.map(d => d.id === updated.id ? updated : d)))
-                    return
-                }
-
-                if (!hasNew && hasOld) {
-                    // DELETE
-                    const oldDish = p.old as IDish
-                    setDishes(prev => prev.filter(d => d.id !== oldDish.id))
-                    return
-                }
+            .channel(channelId)
+            .on('postgres_changes', { event: '*', schema: 'public', table: 'dishes' }, () => {
+                scheduleRefresh()
+            })
+            .on('postgres_changes', { event: '*', schema: 'public', table: 'dish_sides' }, () => {
+                scheduleRefresh()
             })
             .subscribe()
-
 
         return () => {
             isMounted = false
             try { channel.unsubscribe() } catch (e) { }
-            try {
-                supabase.removeChannel?.(channel)
-            } catch (e) { }
+            try { supabase.removeChannel?.(channel) } catch (e) { }
+            if (debounceRef.current) clearTimeout(debounceRef.current)
         }
     }, [])
 
