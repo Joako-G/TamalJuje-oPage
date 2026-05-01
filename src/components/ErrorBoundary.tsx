@@ -15,10 +15,6 @@ export class ErrorBoundary extends React.Component<React.PropsWithChildren<{}>, 
         return { hasError: true, error }
     }
 
-    componentDidCatch(error: Error, info: any) {
-        // suppressed console logging in production; consider sending to remote logging
-    }
-
     render() {
         if (this.state.hasError) {
             return (
