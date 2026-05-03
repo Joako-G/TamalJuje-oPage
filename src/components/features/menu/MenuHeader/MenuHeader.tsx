@@ -22,7 +22,7 @@ export function MenuHeader() {
                     Todos los platos incluyen sopa y pan*
                 </p>
                 <p className="text-center text-secondary small opacity-75 mb-4">
-                    *Excepto tamales y empanadas. Traer recipiente para la sopa.
+                    *Excepto tamales, empanadas y locro. Traer recipiente para la sopa.
                 </p>
             </div>
         </div>
