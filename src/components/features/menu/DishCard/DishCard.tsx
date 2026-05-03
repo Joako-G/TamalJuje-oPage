@@ -15,12 +15,13 @@ export function DishCard({ dish, allSides }: DishCardProps) {
     const dishImageSrc = image_url ? image_url : '/images/logo.jpeg'
 
     const hasSides = dish.sides && dish.sides.length > 0
+    const isPicante = name.toLowerCase().includes('picante de pollo') || name.toLowerCase().includes('picante de lengua')
 
     // Local editing state
     const [editing, setEditing] = useState(false)
     const [side1, setSide1] = useState<string>(dish.sides?.[0]?.name ?? '')
     const [side2, setSide2] = useState<string>(dish.sides?.[1]?.name ?? '')
-    const [wantsExtraSide, setWantsExtraSide] = useState(false)
+    const [wantsExtraSide, setWantsExtraSide] = useState(isPicante)
     const [addedFeedback, setAddedFeedback] = useState(false)
 
     const defaultSideNames = dish.sides?.map(s => s.name) ?? []
@@ -45,7 +46,7 @@ export function DishCard({ dish, allSides }: DishCardProps) {
         // Reset to defaults
         setSide1(dish.sides?.[0]?.name ?? '')
         setSide2(dish.sides?.[1]?.name ?? '')
-        setWantsExtraSide(false)
+        setWantsExtraSide(isPicante)
         setEditing(false)
     }
 
@@ -150,7 +151,7 @@ export function DishCard({ dish, allSides }: DishCardProps) {
                 <div className={`d-flex flex-column gap-2 mt-auto ${styles.buttonGroup}`}>
                     {!editing ? (
                         <>
-                            {hasSides && allSides.length > 0 && (
+                            {hasSides && allSides.length > 0 && !isPicante && (
                                 <button
                                     disabled={!dish.enabled}
                                     onClick={() => setEditing(true)}

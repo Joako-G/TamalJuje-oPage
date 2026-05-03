@@ -1,3 +1,5 @@
+import type { ISide } from "../service/sidesService";
+
 export interface IDish {
     id: number,
     name: string,
@@ -7,6 +9,6 @@ export interface IDish {
     image_url: string,
     menu_day: string,
     // Optional default sides (guarniciones) for the dish
-    sides?: { id: number; name: string }[],
+    sides?: ISide[],
     allows_extra_side?: boolean;
 }

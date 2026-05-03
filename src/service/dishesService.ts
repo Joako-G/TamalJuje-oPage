@@ -1,5 +1,6 @@
 import type { IDish } from "../interfaces/IDish";
 import { supabase } from "../lib/supabase";
+import type { ISide } from "./sidesService";
 
 export async function getDishes(): Promise<IDish[]> {
     const { data: dishesData, error: dishesError } = await supabase
@@ -27,17 +28,19 @@ export async function getDishes(): Promise<IDish[]> {
 
     const { data: sidesData, error: sidesError } = await supabase
         .from('sides')
-        .select('id, name')
-        .in('id', sideIds);
+        .select('id, name, is_available')
+        .in('id', sideIds)
+        .eq('is_available', true)
+        .neq('name', 'Chuño');
 
     if (sidesError) throw sidesError;
 
-    const sides = (sidesData ?? []) as { id: number; name: string }[];
+    const sides = (sidesData ?? []) as ISide[];
 
-    const sideById = new Map<number, { id: number; name: string }>();
+    const sideById = new Map<number, ISide>();
     sides.forEach(s => sideById.set(s.id, s));
 
-    const sidesByDish = new Map<number, { id: number; name: string }[]>();
+    const sidesByDish = new Map<number, ISide[]>();
     for (const ds of dishSides) {
         const side = sideById.get(ds.side_id);
         if (!side) continue;
