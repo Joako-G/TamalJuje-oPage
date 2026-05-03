@@ -6,6 +6,7 @@ export function WhatsAppButton() {
     const isEnabled = cart.length > 0
 
     const handleSendOrder = () => {
+        alert("Espere confirmación de su pedido")
         const myNumber = "93884095206"
 
         // FORMATEAR LA LISTA DE PRODUCTOS
